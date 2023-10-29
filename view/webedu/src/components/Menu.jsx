@@ -21,7 +21,7 @@ const MainMenuItem = styled.span`
   color: gray;
   
   &:hover {
-    transition: font-size 0.1s, font-weight 0.1s, color 0.1s;
+    transition: font-size 0.1s, font-weight 0.1s, color 0.1s fade-Out;
     font-size: 80px;
     font-weight: 1000;
     color: #3469dc;
@@ -33,7 +33,10 @@ const MenuItem = styled.span`
   color: gray;
 
   &:hover {
-    transition: font-size 0.1s, font-weight 0.1s, color 0.1s;
+    transition: font-size 0.5s, font-weight 0.5s, color 0.5s;
+    transition-duration: 0.5s;
+    transition-timing-function: ease;
+    transform: transitionX(300px);
     font-size: 80px;
     font-weight: 1000;
     color: #3469dc;

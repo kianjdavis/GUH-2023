@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
+import { Navigate, useNavigate } from 'react-router';
 
 const Container = styled.div`
   display: flex;
@@ -20,16 +21,24 @@ const Text = styled.h1`
 
 const Award = () => {
   const [displayText, setDisplayText] = useState("Congraturations! Your final grade is...");
-  
-  useEffect(() => {
-    // 使用 setTimeout 启动一个三秒钟的计时器
-    const timer = setTimeout(() => {
-      // 三秒后更新文本内容为 "Grade"
-      setDisplayText("Grade");
-    }, 3000);
 
-    // 返回一个清除计时器的函数以避免内存泄漏
-    return () => clearTimeout(timer);
+  const navigate = useNavigate();
+  useEffect(() => {
+    const timer = setTimeout(() => {
+        // 三秒后更新文本内容为 "Grade"
+        setDisplayText("Grade!!!");
+    
+        // 三秒后导航到 '/start'
+        const navigationTimer = setTimeout(() => {
+          navigate('/');
+        }, 3000);
+    
+        // 返回一个清除计时器的函数以避免内存泄漏
+        return () => {
+          clearTimeout(timer);
+          clearTimeout(navigationTimer);
+        };
+      }, 3000);
   }, []);
 
   return (

@@ -1,5 +1,5 @@
 import Main from './pages/Main';
-// import styled from 'styled-components';
+import Login from './pages/Login';
 import Game from './pages/Game';
 import Win from './pages/Win'
 import {
@@ -17,6 +17,7 @@ function App() {
         <Route path="/start" element={<Game/>}/>
         <Route path="/win" element={<Win/>}/>
         <Route path="/award" element={<Award/>}/>
+        <Route path="/login" element={<Login/>}/> 
       </Routes>
     </Router>
   );

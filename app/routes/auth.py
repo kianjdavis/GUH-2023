@@ -1,20 +1,26 @@
-from flask import Blueprint, request, redirect, url_for
+from flask import Blueprint, make_response, request, jsonify
 from flask_login import login_user
 from app.models import User
 
 auth = Blueprint('auth', __name__)
 
-@auth.route('/login', methods=['POST'])
+@auth.route('/login', methods=['OPTIONS','POST'])
 def login():
-    email = request.form.get('email')
-    password = request.form.get('password')
-    remember = True if request.form.get('remember') else False
+    # Handle OPTIONS request
+    if request.method == 'OPTIONS':
+        response = make_response()
+        response.headers.add("Access-Control-Allow-Methods", "POST")
+        response.headers.add("Access-Control-Allow-Headers", "Content-Type")
+        return response
 
-    user = User.get_user_by_email(email)
-
+    data = request.get_json()
+    print(data)
+    username = data['username']
+    password = data['password']
+    remember = True
+    user = User.get_user_by_username(username)
     if not user or not user.check_password(password):
-        return redirect(url_for('auth.login'))
-
-    login_user(user, remember=remember)
-
-    return redirect(url_for('main.dashboard'))
+        return jsonify({'error': 'Invalid username or password'}), 401
+    
+    login_user(user)
+    return jsonify({'message': 'Login successful'}), 200

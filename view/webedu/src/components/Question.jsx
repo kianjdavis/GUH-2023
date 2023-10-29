@@ -74,13 +74,13 @@ const Question = () => {
 
   const fetchQuestion = async () => {
     const res = await publicRequest.get("/get-question")
-    setQuestion(res.data.question)
-    setChoice1(res.data.choice1)
-    setChoice2(res.data.choice2)
-    setChoice3(res.data.choice3)
-    setChoice4(res.data.choice4)
-    setQuestionId(res.data.id)
-  }
+      setQuestion(res.data.question)
+      setChoice1(res.data.choice1)
+      setChoice2(res.data.choice2)
+      setChoice3(res.data.choice3)
+      setChoice4(res.data.choice4)
+      setQuestionId(res.data.id)
+    }
 
   const handleChoose = async (c) => {
     if (selectedChoice) return;  // If a choice has already been selected, don't process the click
