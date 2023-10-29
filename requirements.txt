@@ -1,0 +1,6 @@
+Flask==3.0.0
+Flask_Cors==4.0.0
+git+https://github.com/maxcountryman/flask-login.git
+pymongo==4.5.0
+python_bcrypt==0.3.2
+python-dotenv==1.0.0
