@@ -1,7 +1,8 @@
-# GreatUniHack
+# WebEdu
+
 ## Project Overview
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+WebEdu is an innovative platform developed during the GreatUniHack 2023 hackathon, organized by UniCS Manchester. Our project, WebEdu, aims to enhance education in primary/middle schools by providing a comprehensive platform featuring engaging general knowledge quizzes. Utilizing the powerful combination of React.js, Flask, and MongoDB Atlas, our team, comprising Vishwas, Yin, Kian, and Artem, worked relentlessly to create an interactive and educational experience for students.
 
 ## Requirements
 
@@ -9,26 +10,43 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 ## Installation
 
-Clone the repository to your local machine:
+1. **Clone the repository to your local machine:**
 
-`git clone https://github.com/kianjdavis/GUH_2023.git`
+   ```
+   git clone https://github.com/kianjdavis/GUH-2023.git
+   cd GHU-2023
+   ```
 
-`cd GHU_2023`
+2. **Create Virtual Environment:**
 
-Create Virtual Environment:
+   ```
+   python -m venv env
+   ```
+   
+   - macOS: `source env/bin/activate`
+   - Windows: `.\env\Scripts\activate` (For Windows, you might need to run PowerShell as administrator. If execution policy is restricted, use `Set-ExecutionPolicy RemoteSigned`, then confirm with `Y`.)
 
-`python -m venv env`
+3. **Install the required Python packages:**
 
-macOS: `source env/bin/activate `
+   ```
+   pip install -r requirements.txt
+   ```
 
-Windows: `.\env\Scripts\activate`
-(For Windows, might need to run PowerShell as administrator, GeGet-ExecutionPolicy. If it is restricted, use Set-ExecutionPolicy RemoteSigned, then Y.)
+4. **Run Flask server:**
 
-Install the required Python packages and Install node and a local node evnironment:
+   ```
+   flask run
+   ```
 
-`pip install -r requirements.txt`
+5. **Navigate to `GUH_2023/view/webedu/` to set up the ReactJS app:**
 
-go to GUH_2023/view/webedu/
-`npm install`
-`npm install react-scripts`
-`npm start`
+   ```
+   npm install
+   npm install react-scripts
+   ```
+
+6. **Start the ReactJS app:**
+
+   ```
+   npm start
+   ```
